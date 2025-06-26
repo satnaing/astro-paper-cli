@@ -3,18 +3,17 @@
   "version": "0.0.1",
   "description": "CLI for AstroPaper",
   "type": "module",
-  "main": "dist/index.js",
   "bin": {
-    "astro-paper": "./index.js"
+    "astro-paper": "./dist/index.js"
   },
   "files": [
     "dist",
-    "templates",
     "README.md"
   ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
+    "link-cli": "npm unlink @astro-paper/cli && npm link",
     "start": "node dist/index.js"
   },
   "keywords": [
@@ -32,6 +31,7 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
+    "@types/node": "^24.0.4",
     "typescript": "^5.8.3"
   }
 }
