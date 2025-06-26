@@ -17,6 +17,7 @@
     "postinstall": "chmod +x dist/index.js",
     "reset": "rm -rf dist && npm run build && npm run postinstall",
     "cleanup": "rm -rf dist && npm run build && npm run link-cli && npm run postinstall",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
