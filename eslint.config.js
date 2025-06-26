@@ -28,6 +28,5 @@ export default defineConfig([
     language: 'markdown/gfm',
     extends: ['markdown/recommended'],
   },
-  { rules: { 'no-console': 'warn' } },
   { ignores: ['dist/**', 'node_modules/**'] },
 ]);
