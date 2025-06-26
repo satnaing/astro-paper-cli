@@ -17,7 +17,8 @@
     "postinstall": "chmod +x dist/index.js",
     "reset": "rm -rf dist && npm run build && npm run postinstall",
     "cleanup": "rm -rf dist && npm run build && npm run link-cli && npm run postinstall",
-    "start": "node dist/index.js"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [
     "astro",
@@ -34,7 +35,17 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@eslint/json": "^0.12.0",
+    "@eslint/markdown": "^6.6.0",
     "@types/node": "^24.0.4",
-    "typescript": "^5.8.3"
+    "eslint": "^9.29.0",
+    "globals": "^16.2.0",
+    "prettier": "3.6.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.0"
+  },
+  "dependencies": {
+    "commander": "^14.0.0"
   }
 }
