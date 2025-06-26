@@ -1,5 +1,29 @@
 #!/usr/bin/env node
 
-import packageJson from "../package.json" with { type: "json" };
+import { Command } from 'commander';
+import packageJson from '../package.json' with { type: 'json' };
 
-console.log("Hello, World", packageJson.name);
+process.on('SIGINT', () => process.exit(0));
+process.on('SIGTERM', () => process.exit(0));
+
+const program = new Command();
+
+// Set up the CLI
+program
+  .name(packageJson.name)
+  .description(packageJson.description)
+  .version(
+    packageJson.version,
+    '-v, --version',
+    `display ${packageJson.name} version number`
+  );
+
+// Add commands
+// program.addCommand(addPost);
+
+// Show help by default if no command is provided
+program.action(() => {
+  program.help();
+});
+
+program.parse();

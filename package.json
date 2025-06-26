@@ -1,7 +1,7 @@
 {
   "name": "@astro-paper/cli",
   "version": "0.0.1",
-  "description": "CLI for AstroPaper",
+  "description": "A comprehensive CLI tool for AstroPaper theme",
   "type": "module",
   "bin": {
     "astro-paper": "./dist/index.js"
