@@ -1,0 +1,37 @@
+{
+  "name": "@astro-paper/cli",
+  "version": "0.0.1",
+  "description": "CLI for AstroPaper",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "astro-paper": "./index.js"
+  },
+  "files": [
+    "dist",
+    "templates",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "astro",
+    "blog",
+    "cli",
+    "theme",
+    "astropaper",
+    "static-site",
+    "markdown"
+  ],
+  "author": "satnaing",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
