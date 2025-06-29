@@ -1,40 +1,41 @@
-import { z } from 'zod';
-import { highlighter } from './highlighter.js';
-import { logger } from './logger.js';
+import { z } from 'zod/v4';
+import { log } from '@clack/prompts';
+
+const lineBreak = () => console.log('');
 
 export function handleError(error: unknown) {
-  logger.error(
+  log.error(
     `Something went wrong. Please check the error below for more details.`
   );
-  logger.error(`If the problem persists, please open an issue on GitHub.`);
-  logger.error('');
+  log.error(`If the problem persists, please open an issue on GitHub.`);
+  log.error('');
   if (typeof error === 'string') {
-    logger.error(error);
-    logger.break();
+    log.error(error);
+    lineBreak();
     process.exit(1);
   }
 
   if (error instanceof z.ZodError) {
-    logger.error('Validation failed:');
+    log.error('Validation failed:');
     for (const [key, value] of Object.entries(error.flatten().fieldErrors)) {
-      logger.error(`- ${highlighter.info(key)}: ${value}`);
+      log.error(`- ${log.info(key)}: ${value}`);
     }
-    logger.break();
+    lineBreak();
     process.exit(1);
   }
 
   if (error instanceof Error) {
-    logger.error(error.message);
-    logger.break();
+    log.error(error.message);
+    lineBreak();
     process.exit(1);
   }
 
   if (error instanceof Error) {
-    logger.error(error.message);
-    logger.break();
+    log.error(error.message);
+    lineBreak();
     process.exit(1);
   }
 
-  logger.break();
+  lineBreak();
   process.exit(1);
 }

@@ -2,6 +2,7 @@
 
 import { Command } from 'commander';
 import packageJson from '../package.json' with { type: 'json' };
+import { addNewPost } from './commands/new/index.js';
 
 process.on('SIGINT', () => process.exit(0));
 process.on('SIGTERM', () => process.exit(0));
@@ -15,11 +16,11 @@ program
   .version(
     packageJson.version,
     '-v, --version',
-    `display ${packageJson.name} version number`
+    `Display ${packageJson.name} version number`
   );
 
 // Add commands
-// program.addCommand(addPost);
+program.addCommand(addNewPost);
 
 // Show help by default if no command is provided
 program.action(() => {
