@@ -37,7 +37,7 @@
     "fs-extra": "^11.3.0",
     "kleur": "^4.1.5",
     "lodash.kebabcase": "^4.1.1",
-    "zod": "^3.25.67"
+    "zod": "^4.6.6"
   },
   "author": "satnaing",
   "license": "MIT",
